@@ -1,34 +1,84 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello, WebVR! - A-Frame</title>
-    <meta name="description" content="Hello, WebVR! - A-Frame">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <title>Event Set for Interactions - A-Frame</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <script>
+      AFRAME.registerComponent("boxposition", {
+        schema: {
+          target: { type: "int", default: 0 }
+        },
 
-       <a-box position="0 4 10" rotation="0 45 0" color="#4CC3D9"></a-box>
-       <a-plane position="0 12 12" rotation="0 90 180" color="#90E722"></a-plane>
-      <a-box position="1 1 25" rotation="0 -45 0" color="#B96FD3"></a-box>
+        init: function() {
+          console.log("init");
+          var data = this.data;
+          var cords =  document.querySelector('#box');
+          var el = this.el; // <a-box>
+          el.addEventListener("mousedown", function() {
+            cords.setAttribute("position", { x: data.target, y: 0, z: 0 });
+            el.setAttribute("boxposition", { target: data.target + 1 });
+          });
+        }
+      });
+    </script>
+    
+    <a-asset-item
+      id="monkey"
+      src="/static/admin/assets/untitled.glb">
+    </a-asset-item>
+    <a-scene background="color: #FAFAFA" environment="preset: forest">
+      <a-box
+        id="box"
+        position="-1 0.5 -3"
+        rotation="0 45 0"
+        src="#monkey"
+        event-set__enter="_event: mousedown; _target: #why; position: boxposition 0 0"
+        
+      ></a-box>
+ 
+      <a-sphere
+        position="0 1.25 -5"
+        radius="1.25"
+        color="#ff0000"
+        event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+        event-set__up="_event: mouseup; scale: 1 1 1"
+        event-set__leave="_event: mouseleave; scale: 1 1 1"
+      ></a-sphere>
 
-  <a-sphere position="2 2 -4" rotation="0 -45 0" color="#FF2D00"></a-sphere>
+      <a-cylinder
+        id="why"
+        position="5 5 -3"
+        radius="0.5"
+        height="1.5"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+        boxposition
+      >
+      </a-cylinder>
 
+      <assets>
+        <img
+          id="right arrow"
+          src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+        />
+      </assets>
 
-       <a-box position="0 4 -3" rotation="0 45 0" color="#101010"></a-box>
-      <a-box position="1 1 0" rotation="0 -45 0" color="#B96FD3"></a-box>
+      <a-plane
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+        height="2"
+        width="2"
+        position="-3.363 3.000 -3.822"
+      >
+      </a-plane>
 
-      <a-sphere position="0 1.25 -8" radius="1.25" color="#EF2D5E" scale="10 10 10">
-        <a-ring position="0 1 0" color="#B96FD3"></a-ring>
-        <a-ring position="0 3 0" color="#B96FD3"></a-ring>
-        <a-ring position="0 2 0" color="#B96FD3"></a-ring>
-      </a-sphere>
-      <a-box position="2 4 6" rotation="0 30 0" color="#336BFF"></a-box>>
-       <a-cylinder position="0 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-sphere position="3 0.75 -3" radius="1" height="1.5" color="#FFC65D"></a-sphere>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
-    
   </body>
 </html>
