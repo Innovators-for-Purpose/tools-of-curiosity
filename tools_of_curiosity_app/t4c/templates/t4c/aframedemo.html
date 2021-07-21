@@ -24,11 +24,29 @@
           });
         }
       });
+      
     </script>
-    
+    <script>
+    AFRAME.registerComponent("boxrotation", {
+        schema: {
+          target: { type: "int", default: 0 }
+        },
+
+        init: function() {
+          console.log("Help!");
+          var data = this.data;
+          var cords =  document.querySelector('#box');
+          var el = this.el; // <a-box>
+          el.addEventListener("mousedown", function() {
+            cords.setAttribute("rotation", { x: -0.131, y: data.target, z: 0 });
+            el.setAttribute("boxrotation", { target: data.target + 30 });
+          });
+        }
+      }); </script>
+      
     <a-asset-item
       id="monkey"
-      src="/static/admin/assets/monkey_proto.glb">
+      src="/static/admin/assets/untitled.glb">
     </a-asset-item>
     <a-scene background="color: #FAFAFA" environment="preset: forest">
       <a-entity
@@ -45,8 +63,14 @@
         height="2"
         width="2"
         src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
-        boxposition
-      >
+        boxposition></a-plane>
+      <a-plane
+      position="-5 1.273 1.446"
+      height="2"
+      width="2"
+      src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+      boxrotation
+    >
     </a-plane>
 
       <a-camera>
