@@ -1,32 +1,13 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Event Set for Interactions - A-Frame</title>
+    <title>A-Frame Monkey_Mingame</title>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
     <script>
-      AFRAME.registerComponent("boxposition", {
-        schema: {
-          target: { type: "int", default: 0 }
-        },
-
-        init: function() {
-          console.log("init");
-          var data = this.data;
-          var cords = document.querySelector("#box");
-          var el = this.el; // <a-box>
-          el.addEventListener("mousedown", function() {
-            cords.setAttribute("position", { x: 0, y: 2.207, z: data.target });
-            el.setAttribute("boxposition", { target: data.target + 1 });
-          });
-        }
-      });
-    </script>
-    <script>
-      AFRAME.registerComponent("boxmotion", {
+      AFRAME.registerComponent("monkeyforwards", {
         schema: {
           target: { type: "int", default: 0 }
         },
@@ -34,74 +15,98 @@
         init: function() {
           console.log("why?");
           var data = this.data;
-          var cords = document.querySelector("#box");
+          var cords = document.querySelector("#forwards");
           var el = this.el; // <a-box>
           el.addEventListener("mousedown", function() {
-            cords.setAttribute("motion", { x: data.target, y: 2.207, z: 0 });
-            el.setAttribute("boxmotion", { target: data.target - 1 });
-           console.log(data.target)
+            cords.setAttribute("position", { x: data.target, y: 2.207, z: 0 });
+            el.setAttribute("monkeyforwards", { target: data.target + 1 });
+            console.log(data.target);
           });
-          console.log(data.target)
+          console.log(data.target);
         }
       });
     </script>
-    <script>
-      AFRAME.registerComponent("boxrotation", {
+     <script>
+      AFRAME.registerComponent("monkeybackwards", {
         schema: {
           target: { type: "int", default: 0 }
         },
 
         init: function() {
-          console.log("Help!");
+          console.log("init");
           var data = this.data;
-          var cords = document.querySelector("#box");
+          var cords = document.querySelector("#backwards");
           var el = this.el; // <a-box>
           el.addEventListener("mousedown", function() {
-            cords.setAttribute("rotation", { x: -0.131, y: data.target, z: 0 });
-            el.setAttribute("boxrotation", { target: data.target + 30 });
+            cords.setAttribute("position", { x: 0, y: 2.207, z: data.target });
+            el.setAttribute("monkeybackwards", { target: data.target - 1 });
+           console.log(data.target)
           });
         }
       });
     </script>
-    
+    <script>
+      AFRAME.registerComponent("monkeyrotation", {
+        schema: {
+          target: { type: "int", default: 0 }
+        },
 
-    
+        init: function() {
+          console.log("Awry!!");
+          var data = this.data;
+          var cords = document.querySelector("#rotate");
+          var el = this.el; // <a-box>
+          el.addEventListener("mousedown", function() {
+            cords.setAttribute("rotation", { x: -0.131, y: data.target, z: 0 });
+            el.setAttribute("monkeyrotation", { target: data.target + 15 });
+            console.log(data.target);
+          });
+          console.log(data.target);
+        }
+      });
+    </script>
+
     <a-scene background="color: #FAFAFA" environment="preset: forest">
       <a-asset-item id="monkey" src="/static/admin/assets/untitled.glb">
-    </a-asset-item>
-    <a-entity
-        id="box"
-        gltf-model="#monkey"
-        position="-0.131 2.207 0.000"
-        rotation="0.000 63.578 0.000"
-        scale="1 1 1"
-      >
+      </a-asset-item>
+
+      <a-entity id="rotate" position="-0.131 2.207 0.000">
+        <a-entity
+          id="forwards"
+          id="backwards"
+          gltf-model="#monkey"
+          position="-0.131 2.207 0.000"
+          rotation="0.000 63.578 0.000"
+          scale="1 1 1">
+        </a-entity>
       </a-entity>
-     
+
       <a-plane
-        id="why"
         position="-3.071 1.273 1.446"
         height="2"
         width="2"
         src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
-        boxposition
-      ></a-plane>
+        monkeyforwards>
+      </a-plane>
+
       <a-plane
         position="-5 1.273 1.446"
         height="2"
         width="2"
-        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
-        boxrotation
-      >
+        src="/static/admin/assets/745609.png"
+        monkeyrotation>
       </a-plane>
+
       <a-plane
         position="-7 1.273 1.446"
         height="2"
         width="2"
         src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
-        boxmotion
-      >
+        monkeybackwards>
       </a-plane>
+
+    
+
       <a-camera>
         <a-cursor></a-cursor>
       </a-camera>
