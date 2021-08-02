@@ -21,7 +21,7 @@
             document
               .querySelector("a-scene")
               .systems["movelist"].addQueue(data.direction);
-            console.log(data.direction);
+   
           });
         }
       });
@@ -37,9 +37,6 @@
           var cords = document.querySelector("#monkey");
           var el = this.el;
           el.addEventListener("mousedown", function() {
-            cords.setAttribute("position", { x: 0, y: 0, z: 0 });
-            cords.setAttribute("rotation", { x: 0, y:0, z:0 });
-           
             document.querySelector("a-scene").systems["movelist"].run();
            
         });
@@ -53,10 +50,11 @@
           var cords = document.querySelector("#monkey");
           var el = this.el;
           el.addEventListener("mousedown", function() {
-         
+          display= []
             cords.setAttribute("position", { x: 0, y:0, z:0 });
           cords.setAttribute("rotation", { x: 0, y:0, z:0 });
-          });
+           console.log(display)
+        });
         }
       });
     </script>
@@ -95,7 +93,7 @@
         position="-5 1.273 1.446"
         height="2"
         width="2"
-        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2F19-198377_back-arrow-icon-png-image-free-download-searchpng.png?v=1627492404824"
         monkeymovement="direction:backward"
       >
       </a-plane>
@@ -113,7 +111,7 @@
         position="-9 1.273 1.446"
         height="2"
         width="2"
-        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2FRight_to_Rotate_1200x638.jpeg?v=1627492405209"
         monkeymovement="direction:right"
       >
       </a-plane>
