@@ -64,4 +64,10 @@ def Egypt(request):
     print("t4c/views.py @ Egypt()")
     pprint(request)
     context = {}
-    return render(request, "t4c/Egypt.html", context)
+    return render(request, "t4c/Egypt.html", context)    
+def scrappy(request):
+     print("t4c/views.py @ scrappy()")
+     pprint(request)
+     context = {}
+     return render(request, "t4c/scrappy.html", context)
+                            
