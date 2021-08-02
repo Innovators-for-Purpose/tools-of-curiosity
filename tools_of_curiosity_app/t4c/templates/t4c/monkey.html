@@ -1,0 +1,278 @@
+<html>
+  <head>
+    <title>A-Frame Monkey_Mingame</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="/static/admin/assets/monkey.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    
+    <link rel="stylesheet" href="/static/admin/assets/monkeyui/in-game-select.css"  type="text/css" />
+    <link rel="stylesheet" href="/static/admin/assets/monkeyui/globals.css"  type="text/css" />
+  <style>
+    .container-center-horizontal{
+        position: absolute;
+        top: 0;
+        left:0;
+    }
+    
+  </style>
+</head>
+  <body>
+    <script>
+      AFRAME.registerComponent("monkeymovement", {
+        schema: {
+          direction: { type: "string" }
+        },
+
+        init: function() {
+          console.log("why?");
+          var data = this.data; // adds the variable that moves the monkey
+          var cords = document.querySelector("#movement");
+          var el = this.el; // <a-box>
+          el.addEventListener("mousedown", function() {
+            document
+              .querySelector("a-scene")
+              .systems["movelist"].addQueue(data.direction);
+   
+          });
+        }
+      });
+    </script>
+
+    <script>
+       
+      
+      
+      AFRAME.registerComponent("start", {
+        init: function() {
+          var data = this.data;
+          var cords = document.querySelector("#monkey");
+          var el = this.el;
+          el.addEventListener("mousedown", function() {
+            document.querySelector("a-scene").systems["movelist"].run();
+           
+        });
+        }
+      });
+    </script>
+    <script>
+      AFRAME.registerComponent("reset", {
+        init: function() {
+          var data = this.data;
+          var cords = document.querySelector("#monkey");
+          var el = this.el;
+          el.addEventListener("mousedown", function() {
+          display= []
+            cords.setAttribute("position", { x: 0, y:0, z:0 });
+          cords.setAttribute("rotation", { x: 0, y:0, z:0 });
+           console.log(display)
+        });
+        }
+      });
+    </script>
+   
+    <a-scene background="color: #FAFAFA" environment="preset: forest" movelist>
+      <a-asset-item
+        id="monkey-asset"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Funtitled.glb?v=1626890755865"
+      >
+        <a-asset-item
+          id="right"
+          src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright.png?v=1627319388769"
+        ></a-asset-item>
+        <a-asset-item id="left" src=""></a-asset-item>
+      </a-asset-item>
+
+        <a-entity
+          id="monkey"
+          gltf-model="#monkey-asset"
+          position="0.00 0.00 0.000"
+          rotation="0.000 0.00 0.000"
+          scale="1 1 1">
+        </a-entity>
+      
+
+      <a-plane
+        position="-3.071 1.273 1.446"
+        height="2"
+        width="2"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+        monkeymovement="direction:forward"
+      >
+      </a-plane>
+
+      <a-plane
+        position="-5 1.273 1.446"
+        height="2"
+        width="2"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2F19-198377_back-arrow-icon-png-image-free-download-searchpng.png?v=1627492404824"
+        monkeymovement="direction:backward"
+      >
+      </a-plane>
+
+      <a-plane
+        position="-7 1.273 1.446"
+        height="2"
+        width="2"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fleft.png?v=1627484839582"
+        monkeymovement="direction:left"
+      >
+      </a-plane>
+
+      <a-plane
+        position="-9 1.273 1.446"
+        height="2"
+        width="2"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2FRight_to_Rotate_1200x638.jpeg?v=1627492405209"
+        monkeymovement="direction:right"
+      >
+      </a-plane>
+      <a-plane
+        position="-11 1.273 1.446"
+        height="2"
+        width="2"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fstart-5299340_960_720.png?v=1627484839512"
+        start
+      >
+      </a-plane>
+ <a-plane
+        position="-13 1.273 1.446"
+        height="2"
+        width="2"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Freset-training-logo-with-name-1400x500.png?v=1627484741544"
+        
+      reset>
+      </a-plane>
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  
+    <div class="container-center-horizontal">
+        <div class="in-game-select screen">
+          <img class="toc-ui-shape-display-01-cJhv78" src="/static/admin/assets/monkeyui/toc-ui-shape-display-01@1x.png" /><img
+            class="level-1-title-01-cJhv78"
+            src="/static/admin/assets/monkeyui/level-1-title-01@1x.png"
+          /><img class="back-setting-upper-buttons-01-cJhv78" src="/static/admin/assets/monkeyui/back---setting-upper-buttons-01@1x.png" /><img
+            class="back-setting-upper-buttons-02-cJhv78"
+            src="/static/admin/assets/monkeyui/back---setting-upper-buttons-02@1x.png"
+          /><img class="game-button-user-input-06-cJhv78" src="/static/admin/assets/monkeyui/game-button-user-input-06@1x.png" /><img
+            class="game-button-user-input-07-cJhv78"
+            src="/static/admin/assets/monkeyui/game-button-user-input-07@1x.png"
+          />
+          <div class="group-188-cJhv78">
+            <div class="group-187-s3x1fR">
+              <div class="group-170-vi0ngR">
+                <div class="rectangle-54-p65iJI"></div>
+                <div class="rectangle-55-p65iJI border-1px-niagara"></div>
+                <div class="group-167-p65iJI">
+                  <img class="path-110-7lD5am" src="/static/admin/assets/monkeyui/path-102@1x.png" /><img
+                    class="path-111-7lD5am"
+                    src="/static/admin/assets/monkeyui/path-103@1x.png"
+                  />
+                </div>
+                <div class="group-169-p65iJI">
+                  <img class="path-112-gDuR9V" src="/static/admin/assets/monkeyui/path-104@1x.png" /><img
+                    class="path-113-gDuR9V"
+                    src="/static/admin/assets/monkeyui/path-105@1x.png"
+                  />
+                </div>
+              </div>
+              <div class="group-175-vi0ngR">
+                <img class="rectangle-56-Sq9aWF" src="/static/admin/assets/monkeyui/rectangle-56@1x.png" />
+                <div class="group-174-Sq9aWF">
+                  <div class="group-173-TmSl3B">
+                    <div class="group-171-Bh75L5">
+                      <div class="rectangle-57-kf4OP3"></div>
+                    </div>
+                    <div class="group-172-Bh75L5"><img class="path-114-Zy2OpU" src="/static/admin/assets/monkeyui/path-114@1x.png" /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-191-cJhv78">
+            <div class="rectangle-58-ey0hSj"></div>
+            <div class="rectangle-59-ey0hSj border-1px-niagara"></div>
+            <div class="group-184-ey0hSj">
+              <div class="group-176-XlUVPX">
+                <img class="path-115-7jJ1MH" src="/static/admin/assets/monkeyui/path-105@1x.png" /><img
+                  class="path-116-7jJ1MH"
+                  src="/static/admin/assets/monkeyui/path-104@1x.png"
+                />
+              </div>
+              <div class="group-178-XlUVPX">
+                <img class="path-117-LwMXyv" src="/static/admin/assets/monkeyui/path-103@1x.png" /><img
+                  class="path-118-LwMXyv"
+                  src="/static/admin/assets/monkeyui/path-102@1x.png"
+                />
+              </div>
+              <img class="rectangle-60-XlUVPX" src="/static/admin/assets/monkeyui/rectangle-60@1x.png" />
+            </div>
+            <div class="group-183-ey0hSj">
+              <div class="group-182-my6xQZ">
+                <div class="group-180-s1RhtC">
+                  <div class="rectangle-61-qrjzjo"></div>
+                </div>
+                <div class="group-181-s1RhtC"><img class="path-119-QkcxWA" src="/static/admin/assets/monkeyui/path-119@1x.png" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="group-189-cJhv78">
+            <div class="group-161-1wapay">
+              <img class="path-104-MCxHaa" src="/static/admin/assets/monkeyui/path-104@1x.png" /><img
+                class="path-105-MCxHaa"
+                src="/static/admin/assets/monkeyui/path-105@1x.png"
+              />
+            </div>
+            <div class="group-186-1wapay">
+              <div class="group-160-EHL3Uz">
+                <div class="rectangle-50-3SbCm0"></div>
+                <div class="rectangle-51-3SbCm0 border-1px-niagara"></div>
+                <div class="group-159-3SbCm0">
+                  <img class="path-102-GqgrEG" src="/static/admin/assets/monkeyui/path-102@1x.png" /><img
+                    class="path-103-GqgrEG"
+                    src="/static/admin/assets/monkeyui/path-103@1x.png"
+                  />
+                </div>
+              </div>
+              <img class="path-122-EHL3Uz" src="/static/admin/assets/monkeyui/path-122@1x.png" />
+            </div>
+          </div>
+          <div class="group-190-cJhv78">
+            <div class="group-185-gjiOjP">
+              <div class="group-166-z4G4Wv">
+                <div class="rectangle-52-vYlgCe"></div>
+                <div class="rectangle-53-vYlgCe border-1px-niagara"></div>
+                <div class="group-163-vYlgCe">
+                  <img class="path-106-dEcsUv" src="/static/admin/assets/monkeyui/path-104@1x.png" /><img
+                    class="path-107-dEcsUv"
+                    src="/static/admin/assets/monkeyui/path-105@1x.png"
+                  />
+                </div>
+                <div class="group-165-vYlgCe">
+                  <img class="path-108-YrClkq" src="/static/admin/assets/monkeyui/path-102@1x.png" /><img
+                    class="path-109-YrClkq"
+                    src="/static/admin/assets/monkeyui/path-103@1x.png"
+                  />
+                </div>
+              </div>
+              <img class="path-123-z4G4Wv" src="/static/admin/assets/monkeyui/path-123@1x.png" />
+            </div>
+          </div>
+          <img class="game-button-user-input-08-cJhv78" src="/static/admin/assets/monkeyui/game-button-user-input-08@1x.png" /><img
+            class="game-button-user-input-03-cJhv78"
+            src="/static/admin/assets/monkeyui/game-button-user-input-03-1@1x.png"
+          /><img class="game-button-user-input-02-cJhv78" src="/static/admin/assets/monkeyui/game-button-user-input-02-1@1x.png" /><img
+            class="game-button-user-input-03-iRXH7W"
+            src="/static/admin/assets/monkeyui/game-button-user-input-03-1@1x.png"
+          /><img class="game-button-user-input-02-iRXH7W" src="/static/admin/assets/monkeyui/game-button-user-input-02-1@1x.png" /><img
+            class="monkey-cpu-on-aframe-cJhv78"
+            src="/static/admin/assets/monkeyui/monkey---cpu-on-aframe@1x.png"
+          /><img class="monkey-cube-render-cJhv78" src="/static/admin/assets/monkeyui/monkey-cube-render@1x.png" />
+        </div>
+      </div>
+  
+</body>
+</html>

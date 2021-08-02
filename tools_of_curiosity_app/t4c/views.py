@@ -16,11 +16,11 @@ def aframedemo(request):
     context = {}
     return render(request, "t4c/aframedemo.html", context)
 
-def minigame1(request):
-    print("t4c/views.py @ minigame1()")
+def monkey(request):
+    print("t4c/views.py @ monkey()")
     pprint(request)
     context = {}
-    return render(request, "t4c/minigame1.html", context)
+    return render(request, "t4c/monkey.html", context)
 
 def minigame2(request):
     print("t4c/views.py @ minigame2()")

@@ -1,34 +1,117 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Hello, WebVR! - A-Frame</title>
-    <meta name="description" content="Hello, WebVR! - A-Frame">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <title>A-Frame Monkey_Mingame</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <script>
+      AFRAME.registerComponent("monkeyforwards", {
+        schema: {
+          target: { type: "int", default: 0 }
+        },
 
-       <a-box position="0 4 10" rotation="0 45 0" color="#4CC3D9"></a-box>
-       <a-plane position="0 12 12" rotation="0 90 180" color="#90E722"></a-plane>
-      <a-box position="1 1 25" rotation="0 -45 0" color="#B96FD3"></a-box>
+        init: function() {
+          console.log("why?");
+          var data = this.data;
+          var cords = document.querySelector("#forwards");
+          var el = this.el; // <a-box>
+          el.addEventListener("mousedown", function() {
+            cords.setAttribute("position", { x: data.target, y: 2.207, z: 0 });
+            el.setAttribute("monkeyforwards", { target: data.target + 1 });
+            console.log(data.target);
+          });
+          console.log(data.target);
+        }
+      });
+    </script>
+     <script>
+      AFRAME.registerComponent("monkeybackwards", {
+        schema: {
+          target: { type: "int", default: 0 }
+        },
 
-  <a-sphere position="2 2 -4" rotation="0 -45 0" color="#FF2D00"></a-sphere>
+        init: function() {
+          console.log("init");
+          var data = this.data;
+          var cords = document.querySelector("#backwards");
+          var el = this.el; // <a-box>
+          el.addEventListener("mousedown", function() {
+            cords.setAttribute("position", { x: 0, y: 2.207, z: data.target });
+            el.setAttribute("monkeybackwards", { target: data.target - 1 });
+           console.log(data.target)
+          });
+        }
+      });
+    </script>
+    <script>
+      AFRAME.registerComponent("monkeyrotation", {
+        schema: {
+          target: { type: "int", default: 0 }
+        },
 
+        init: function() {
+          console.log("Awry!!");
+          var data = this.data;
+          var cords = document.querySelector("#rotate");
+          var el = this.el; // <a-box>
+          el.addEventListener("mousedown", function() {
+            cords.setAttribute("rotation", { x: -0.131, y: data.target, z: 0 });
+            el.setAttribute("monkeyrotation", { target: data.target + 15 });
+            console.log(data.target);
+          });
+          console.log(data.target);
+        }
+      });
+    </script>
 
-       <a-box position="0 4 -3" rotation="0 45 0" color="#101010"></a-box>
-      <a-box position="1 1 0" rotation="0 -45 0" color="#B96FD3"></a-box>
+    <a-scene background="color: #FAFAFA" environment="preset: forest">
+      <a-asset-item id="monkey" src="/static/admin/assets/untitled.glb">
+      </a-asset-item>
 
-      <a-sphere position="0 1.25 -8" radius="1.25" color="#EF2D5E" scale="10 10 10">
-        <a-ring position="0 1 0" color="#B96FD3"></a-ring>
-        <a-ring position="0 3 0" color="#B96FD3"></a-ring>
-        <a-ring position="0 2 0" color="#B96FD3"></a-ring>
-      </a-sphere>
-      <a-box position="2 4 6" rotation="0 30 0" color="#336BFF"></a-box>>
-       <a-cylinder position="0 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-sphere position="3 0.75 -3" radius="1" height="1.5" color="#FFC65D"></a-sphere>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-entity id="rotate" position="-0.131 2.207 0.000">
+        <a-entity
+          id="forwards"
+          id="backwards"
+          gltf-model="#monkey"
+          position="-0.131 2.207 0.000"
+          rotation="0.000 63.578 0.000"
+          scale="1 1 1">
+        </a-entity>
+      </a-entity>
+
+      <a-plane
+        position="-3.071 1.273 1.446"
+        height="2"
+        width="2"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+        monkeyforwards>
+      </a-plane>
+
+      <a-plane
+        position="-5 1.273 1.446"
+        height="2"
+        width="2"
+        src="/static/admin/assets/745609.png"
+        monkeyrotation>
+      </a-plane>
+
+      <a-plane
+        position="-7 1.273 1.446"
+        height="2"
+        width="2"
+        src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
+        monkeybackwards>
+      </a-plane>
+
+    
+
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
-    
   </body>
 </html>
