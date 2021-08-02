@@ -70,4 +70,9 @@ def scrappy(request):
      pprint(request)
      context = {}
      return render(request, "t4c/scrappy.html", context)
+def level1(request):
+     print("t4c/views.py @ level1()")
+     pprint(request)
+     context = {}
+     return render(request, "t4c/level1.html", context)
                             
