@@ -28,13 +28,21 @@
     </script>
 
     <script>
+       
+      
+      
       AFRAME.registerComponent("start", {
         init: function() {
           var data = this.data;
+          var cords = document.querySelector("#monkey");
           var el = this.el;
           el.addEventListener("mousedown", function() {
+            cords.setAttribute("position", { x: 0, y: 0, z: 0 });
+            cords.setAttribute("rotation", { x: 0, y:0, z:0 });
+           
             document.querySelector("a-scene").systems["movelist"].run();
-          });
+           
+        });
         }
       });
     </script>
@@ -45,7 +53,8 @@
           var cords = document.querySelector("#monkey");
           var el = this.el;
           el.addEventListener("mousedown", function() {
-           cords.setAttribute("position", { x: 0, y:0, z:0 });
+         
+            cords.setAttribute("position", { x: 0, y:0, z:0 });
           cords.setAttribute("rotation", { x: 0, y:0, z:0 });
           });
         }
@@ -64,16 +73,14 @@
         <a-asset-item id="left" src=""></a-asset-item>
       </a-asset-item>
 
-      <a-entity id="rotate" position="0.00 0 0.000">
         <a-entity
           id="monkey"
           gltf-model="#monkey-asset"
-          position="0 0 0.000"
-          rotation="0.000 0 0.000"
-          scale="1 1 1"
-        >
+          position="0.00 0.00 0.000"
+          rotation="0.000 0.00 0.000"
+          scale="1 1 1">
         </a-entity>
-      </a-entity>
+      
 
       <a-plane
         position="-3.071 1.273 1.446"

@@ -29,12 +29,14 @@ AFRAME.registerSystem("movelist", {
   },
 
   pushCode: function() {
+    var cords = document.querySelector("#movement");
     var turnTally = 0;
     var i;
     for (i = 0; i < 10; i++) {
       if (display[i] == "forward") {
         if (turnTally == 0) {
           document.querySelector("#monkey").object3D.position.x += 1;
+        console.log(turnTally)
         } else if (turnTally == 90) {
           document.querySelector("#monkey").object3D.position.z += 1;
         } else if (turnTally == 180) {
@@ -54,10 +56,12 @@ AFRAME.registerSystem("movelist", {
         }
       } else if (display[i] == "right") {
         turnTally = turnTally + 90;
+        console.log(turnTally)
       } else if (display[i] == "left") {
         turnTally = turnTally - 90;
+        console.log(turnTally)
       } else {
-        console.log("error");
+        console.log("no command at slot " + i);
       }
       if (turnTally >= 360) {
         turnTally = turnTally - 360;
@@ -73,7 +77,7 @@ AFRAME.registerSystem("movelist", {
 
   run: function() {
     this.pushCode();
-    console.log(display);
+    
   },
 
   displaySequence: function(display) {
