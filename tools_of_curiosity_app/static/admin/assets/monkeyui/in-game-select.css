@@ -1,7 +1,7 @@
 /* screen - in-game-select */
 
 .in-game-select {
-  background-color: #ffffff;
+  /* pointer-events: none; */
   height: 1080px;
   overflow: hidden;
   overflow-x: hidden;
@@ -691,7 +691,7 @@
   width: 151px;
 }
 
-.in-game-select .monkey-cpu-on-aframe-cJhv78 {
+.in-game-select .Angel-cpu-on-aframe-cJhv78 {
   background-color: transparent;
   height: 405px;
   left: 604px;
@@ -701,7 +701,7 @@
   width: 712px;
 }
 
-.in-game-select .monkey-cube-render-cJhv78 {
+.in-game-select .Angel-cube-render-cJhv78 {
   background-color: transparent;
   height: 168px;
   left: 644px;

@@ -2,18 +2,17 @@
   <head>
     <title>A-Frame Monkey_Mingame</title>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <script src="/static/admin/assets/monkey.js"></script>
+    <script src="/static/admin/assets/Angel.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    
     <link rel="stylesheet" href="/static/admin/assets/monkeyui/in-game-select.css"  type="text/css" />
     <link rel="stylesheet" href="/static/admin/assets/monkeyui/globals.css"  type="text/css" />
   <style>
     .container-center-horizontal{
         position: absolute;
-        top: 0;
-        left:0;
-    }
+        height: 9px;
+        top: 0; left:0;right: 0;
     
+    } 
   </style>
 </head>
   <body>
@@ -96,7 +95,7 @@
         height="2"
         width="2"
         src="https://cdn.glitch.com/b3d1894b-450a-411e-a352-9fc7679182d1%2Fright%2Bnext%2Bforward-1320568500632522035.png?v=1626793067174"
-        monkeymovement="direction:forward"
+        
       >
       </a-plane>
 
@@ -147,14 +146,25 @@
       </a-camera>
 
       <a-sky color="#ECECEC"></a-sky>
+    
     </a-scene>
-  
+    
+    <script>
+      
+      
+        function movementForward() {
+           
+            
+            console.log("move forward!")
+        }
+    </script>
+
     <div class="container-center-horizontal">
         <div class="in-game-select screen">
-          <img class="toc-ui-shape-display-01-cJhv78" src="/static/admin/assets/monkeyui/toc-ui-shape-display-01@1x.png" /><img
-            class="level-1-title-01-cJhv78"
-            src="/static/admin/assets/monkeyui/level-1-title-01@1x.png"
-          /><img class="back-setting-upper-buttons-01-cJhv78" src="/static/admin/assets/monkeyui/back---setting-upper-buttons-01@1x.png" /><img
+          <!-- <img class="toc-ui-shape-display-01-cJhv78" src="/static/admin/assets/monkeyui/toc-ui-shape-display-01@1x.png" /><img -->
+            <!-- class="level-1-title-01-cJhv78" -->
+            <!-- src="/static/admin/assets/monkeyui/level-1-title-01@1x.png" />-->
+            <img class="back-setting-upper-buttons-01-cJhv78" src="/static/admin/assets/monkeyui/back---setting-upper-buttons-01@1x.png" /><img
             class="back-setting-upper-buttons-02-cJhv78"
             src="/static/admin/assets/monkeyui/back---setting-upper-buttons-02@1x.png"
           /><img class="game-button-user-input-06-cJhv78" src="/static/admin/assets/monkeyui/game-button-user-input-06@1x.png" /><img
@@ -192,7 +202,7 @@
               </div>
             </div>
           </div>
-          <div class="group-191-cJhv78">
+          <div onclick="movementForward()" class="group-191-cJhv78">
             <div class="rectangle-58-ey0hSj"></div>
             <div class="rectangle-59-ey0hSj border-1px-niagara"></div>
             <div class="group-184-ey0hSj">
@@ -210,12 +220,12 @@
               </div>
               <img class="rectangle-60-XlUVPX" src="/static/admin/assets/monkeyui/rectangle-60@1x.png" />
             </div>
-            <div class="group-183-ey0hSj">
+            <div  class="group-183-ey0hSj">
               <div class="group-182-my6xQZ">
                 <div class="group-180-s1RhtC">
-                  <div class="rectangle-61-qrjzjo"></div>
+                  <div  class="rectangle-61-qrjzjo"></div>
                 </div>
-                <div class="group-181-s1RhtC"><img class="path-119-QkcxWA" src="/static/admin/assets/monkeyui/path-119@1x.png" /></div>
+                <div  class="group-181-s1RhtC"><img class="path-119-QkcxWA" src="/static/admin/assets/monkeyui/path-119@1x.png" /></div>
               </div>
             </div>
           </div>
@@ -267,10 +277,12 @@
           /><img class="game-button-user-input-02-cJhv78" src="/static/admin/assets/monkeyui/game-button-user-input-02-1@1x.png" /><img
             class="game-button-user-input-03-iRXH7W"
             src="/static/admin/assets/monkeyui/game-button-user-input-03-1@1x.png"
-          /><img class="game-button-user-input-02-iRXH7W" src="/static/admin/assets/monkeyui/game-button-user-input-02-1@1x.png" /><img
-            class="monkey-cpu-on-aframe-cJhv78"
-            src="/static/admin/assets/monkeyui/monkey---cpu-on-aframe@1x.png"
-          /><img class="monkey-cube-render-cJhv78" src="/static/admin/assets/monkeyui/monkey-cube-render@1x.png" />
+          />
+          <!-- <img class="game-button-user-input-02-iRXH7W" src="/static/admin/assets/monkeyui/game-button-user-input-02-1@1x.png" /><img -->
+            <!-- class="monkey-cpu-on-aframe-cJhv78" -->
+            <!-- src="/static/admin/assets/monkeyui/monkey---cpu-on-aframe@1x.png" -->
+          <!-- /> -->
+          <!-- <img class="monkey-cube-render-cJhv78" src="/static/admin/assets/monkeyui/monkey-cube-render@1x.png" id="monkey"/> -->
         </div>
       </div>
   

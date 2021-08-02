@@ -35,24 +35,24 @@ AFRAME.registerSystem("movelist", {
     for (i = 0; i < 10; i++) {
       if (display[i] == "forward") {
         if (turnTally == 0) {
-          document.querySelector("#monkey").object3D.position.x += 1;
+          document.querySelector("#Angel").object3D.position.x += 1;
         console.log(turnTally)
         } else if (turnTally == 90) {
-          document.querySelector("#monkey").object3D.position.z += 1;
+          document.querySelector("#Angel").object3D.position.z += 1;
         } else if (turnTally == 180) {
-          document.querySelector("#monkey").object3D.position.x -= 1;
+          document.querySelector("#Angel").object3D.position.x -= 1;
         } else {
-          document.querySelector("#monkey").object3D.position.z -= 1;
+          document.querySelector("#Angel").object3D.position.z -= 1;
         }
       } else if (display[i] == "backward") {
         if (turnTally == 0) {
-          document.querySelector("#monkey").object3D.position.x -= 1;
+          document.querySelector("#Angel").object3D.position.x -= 1;
         } else if (turnTally == 90) {
-          document.querySelector("#monkey").object3D.position.z -= 1;
+          document.querySelector("#Angel").object3D.position.z -= 1;
         } else if (turnTally == 180) {
-          document.querySelector("#monkey").object3D.position.x += 1;
+          document.querySelector("#Angel").object3D.position.x += 1;
         } else {
-          document.querySelector("#monkey").object3D.position.z += 1;
+          document.querySelector("#Angel").object3D.position.z += 1;
         }
       } else if (display[i] == "right") {
         turnTally = turnTally + 90;
@@ -70,7 +70,7 @@ AFRAME.registerSystem("movelist", {
         turnTally = turnTally + 360;
       }
       document
-        .querySelector("#monkey")
+        .querySelector("#Angel")
         .setAttribute("rotation", { x: 0, y: turnTally, z: 0 });
     }
   },
