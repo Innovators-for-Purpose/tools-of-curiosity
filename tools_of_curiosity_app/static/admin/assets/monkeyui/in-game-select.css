@@ -1,0 +1,712 @@
+/* screen - in-game-select */
+
+.in-game-select {
+  /* pointer-events: none; */
+  height: 1080px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1920px;
+}
+
+.in-game-select .toc-ui-shape-display-01-cJhv78 {
+  background-color: transparent;
+  height: 1080px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1920px;
+}
+
+.in-game-select .level-1-title-01-cJhv78 {
+  background-color: transparent;
+  height: 133px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 779px;
+}
+
+.in-game-select .back-setting-upper-buttons-01-cJhv78 {
+  background-color: transparent;
+  height: 107px;
+  left: 1732px;
+  object-fit: cover;
+  position: absolute;
+  top: 27px;
+  width: 116px;
+}
+
+.in-game-select .back-setting-upper-buttons-02-cJhv78 {
+  background-color: transparent;
+  height: 106px;
+  left: 1605px;
+  object-fit: cover;
+  position: absolute;
+  top: 27px;
+  width: 115px;
+}
+
+.in-game-select .game-button-user-input-06-cJhv78 {
+  background-color: transparent;
+  height: 207px;
+  left: 1647px;
+  object-fit: cover;
+  position: absolute;
+  top: 600px;
+  width: 201px;
+}
+
+.in-game-select .game-button-user-input-07-cJhv78 {
+  background-color: transparent;
+  height: 207px;
+  left: 1647px;
+  object-fit: cover;
+  position: absolute;
+  top: 848px;
+  width: 201px;
+}
+
+.in-game-select .group-188-cJhv78 {
+  background-color: transparent;
+  height: 114px;
+  left: 735px;
+  position: absolute;
+  top: 921px;
+  width: 125px;
+}
+
+.in-game-select .group-187-s3x1fR {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-170-vi0ngR {
+  background-color: transparent;
+  height: 100%;
+  left: 6px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 11px);
+}
+
+.in-game-select .rectangle-54-p65iJI {
+  background-color: var(--swamp);
+  height: 100%;
+  left: 1px;
+  opacity: 0.43;
+  position: absolute;
+  top: 1px;
+  transform: rotate(180deg);
+  width: 100%;
+}
+
+.in-game-select .rectangle-55-p65iJI {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transform: rotate(180deg);
+  width: calc(100.00% + 1px);
+}
+
+.in-game-select .group-167-p65iJI {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 15px;
+}
+
+.in-game-select .path-110-7lD5am {
+  background-color: transparent;
+  bottom: -3px;
+  height: 18px;
+  left: -3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-111-7lD5am {
+  background-color: transparent;
+  height: 18px;
+  left: -3px;
+  object-fit: cover;
+  position: absolute;
+  top: -3px;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .group-169-p65iJI {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 15px;
+}
+
+.in-game-select .path-112-gDuR9V {
+  background-color: transparent;
+  bottom: -3px;
+  height: 18px;
+  left: -2px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-113-gDuR9V {
+  background-color: transparent;
+  height: 18px;
+  left: -2px;
+  object-fit: cover;
+  position: absolute;
+  top: -3px;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .group-175-vi0ngR {
+  background-color: transparent;
+  height: calc(100.00% - 4px);
+  left: 0px;
+  position: absolute;
+  top: 3px;
+  width: 100%;
+}
+
+.in-game-select .rectangle-56-Sq9aWF {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  mix-blend-mode: screen;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-174-Sq9aWF {
+  background-color: transparent;
+  height: 43px;
+  left: calc(49.12% - 27px);
+  position: absolute;
+  top: calc(48.23% - 21px);
+  width: 55px;
+}
+
+.in-game-select .group-173-TmSl3B {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-171-Bh75L5 {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: 0px;
+  top: calc(50.00% - 7px);
+  width: 8px;
+}
+
+.in-game-select .rectangle-57-kf4OP3 {
+  background-color: #00f0e5;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-172-Bh75L5 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 12px);
+}
+
+.in-game-select .path-114-Zy2OpU {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-191-cJhv78 {
+  background-color: transparent;
+  height: 115px;
+  left: 1146px;
+  position: absolute;
+  top: 921px;
+  width: 125px;
+}
+
+.in-game-select .rectangle-58-ey0hSj {
+  background-color: var(--swamp);
+  height: 100%;
+  left: 3px;
+  opacity: 0.43;
+  position: absolute;
+  top: 1px;
+  width: calc(100.00% - 11px);
+}
+
+.in-game-select .rectangle-59-ey0hSj {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 3px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 10px);
+}
+
+.in-game-select .group-184-ey0hSj {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-176-XlUVPX {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 8px;
+  top: 0px;
+  width: 15px;
+}
+
+.in-game-select .path-115-7jJ1MH {
+  background-color: transparent;
+  height: 18px;
+  left: -2px;
+  object-fit: cover;
+  position: absolute;
+  top: -3px;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-116-7jJ1MH {
+  background-color: transparent;
+  bottom: -3px;
+  height: 18px;
+  left: -2px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .group-178-XlUVPX {
+  background-color: transparent;
+  height: 100%;
+  left: 4px;
+  position: absolute;
+  top: 0px;
+  width: 15px;
+}
+
+.in-game-select .path-117-LwMXyv {
+  background-color: transparent;
+  height: 18px;
+  left: -3px;
+  object-fit: cover;
+  position: absolute;
+  top: -3px;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-118-LwMXyv {
+  background-color: transparent;
+  bottom: -3px;
+  height: 18px;
+  left: -3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .rectangle-60-XlUVPX {
+  background-color: transparent;
+  height: calc(100.00% - 4px);
+  left: 0px;
+  mix-blend-mode: screen;
+  object-fit: cover;
+  position: absolute;
+  top: 3px;
+  width: 100%;
+}
+
+.in-game-select .group-183-ey0hSj {
+  background-color: transparent;
+  bottom: calc(49.53% - 21px);
+  height: 43px;
+  position: absolute;
+  right: calc(49.99% - 28px);
+  width: 55px;
+}
+
+.in-game-select .group-182-my6xQZ {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-180-s1RhtC {
+  background-color: transparent;
+  height: 14px;
+  left: 0px;
+  position: absolute;
+  top: calc(50.00% - 7px);
+  width: 8px;
+}
+
+.in-game-select .rectangle-61-qrjzjo {
+  background-color: #00f0e5;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-181-s1RhtC {
+  background-color: transparent;
+  height: 100%;
+  left: 12px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 12px);
+}
+
+.in-game-select .path-119-QkcxWA {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-189-cJhv78 {
+  background-color: transparent;
+  height: 115px;
+  left: 879px;
+  position: absolute;
+  top: 921px;
+  width: 114px;
+}
+
+.in-game-select .group-161-1wapay {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 15px;
+}
+
+.in-game-select .path-104-MCxHaa {
+  background-color: transparent;
+  bottom: -3px;
+  height: 18px;
+  left: -2px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-105-MCxHaa {
+  background-color: transparent;
+  height: 18px;
+  left: -2px;
+  object-fit: cover;
+  position: absolute;
+  top: -3px;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .group-186-1wapay {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-160-EHL3Uz {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .rectangle-50-3SbCm0 {
+  background-color: var(--swamp);
+  height: 100%;
+  left: 1px;
+  opacity: 0.43;
+  position: absolute;
+  top: 0px;
+  transform: rotate(180deg);
+  width: 100%;
+}
+
+.in-game-select .rectangle-51-3SbCm0 {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  position: absolute;
+  top: -1px;
+  transform: rotate(180deg);
+  width: calc(100.00% + 1px);
+}
+
+.in-game-select .group-159-3SbCm0 {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  width: 15px;
+}
+
+.in-game-select .path-102-GqgrEG {
+  background-color: transparent;
+  bottom: -3px;
+  height: 18px;
+  left: -3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-103-GqgrEG {
+  background-color: transparent;
+  height: 18px;
+  left: -3px;
+  object-fit: cover;
+  position: absolute;
+  top: -3px;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-122-EHL3Uz {
+  background-color: transparent;
+  bottom: calc(49.98% - 29px);
+  height: 58px;
+  left: calc(49.52% - 30px);
+  object-fit: cover;
+  position: absolute;
+  width: 60px;
+}
+
+.in-game-select .group-190-cJhv78 {
+  background-color: transparent;
+  height: 114px;
+  left: 1013px;
+  position: absolute;
+  top: 921px;
+  width: 114px;
+}
+
+.in-game-select .group-185-gjiOjP {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .group-166-z4G4Wv {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .rectangle-52-vYlgCe {
+  background-color: var(--swamp);
+  height: 100%;
+  left: 0px;
+  opacity: 0.43;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.in-game-select .rectangle-53-vYlgCe {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.in-game-select .group-163-vYlgCe {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 15px;
+}
+
+.in-game-select .path-106-dEcsUv {
+  background-color: transparent;
+  bottom: -3px;
+  height: 18px;
+  left: -2px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-107-dEcsUv {
+  background-color: transparent;
+  height: 18px;
+  left: -2px;
+  object-fit: cover;
+  position: absolute;
+  top: -3px;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .group-165-vYlgCe {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 15px;
+}
+
+.in-game-select .path-108-YrClkq {
+  background-color: transparent;
+  bottom: -3px;
+  height: 18px;
+  left: -3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-109-YrClkq {
+  background-color: transparent;
+  height: 18px;
+  left: -3px;
+  object-fit: cover;
+  position: absolute;
+  top: -3px;
+  width: calc(100.00% + 5px);
+}
+
+.in-game-select .path-123-z4G4Wv {
+  background-color: transparent;
+  height: calc(100.00% - 37px);
+  left: 19px;
+  object-fit: cover;
+  position: absolute;
+  top: 19px;
+  width: calc(100.00% - 37px);
+}
+
+.in-game-select .game-button-user-input-08-cJhv78 {
+  background-color: transparent;
+  height: 254px;
+  left: 425px;
+  object-fit: cover;
+  position: absolute;
+  top: 654px;
+  width: 1094px;
+}
+
+.in-game-select .game-button-user-input-03-cJhv78 {
+  background-color: transparent;
+  height: 97px;
+  left: 498px;
+  object-fit: cover;
+  position: absolute;
+  top: 590px;
+  width: 103px;
+}
+
+.in-game-select .game-button-user-input-02-cJhv78 {
+  background-color: transparent;
+  height: 142px;
+  left: 474px;
+  object-fit: cover;
+  position: absolute;
+  top: 709px;
+  width: 151px;
+}
+
+.in-game-select .game-button-user-input-03-iRXH7W {
+  background-color: transparent;
+  height: 97px;
+  left: 662px;
+  object-fit: cover;
+  position: absolute;
+  top: 590px;
+  width: 103px;
+}
+
+.in-game-select .game-button-user-input-02-iRXH7W {
+  background-color: transparent;
+  height: 142px;
+  left: 638px;
+  object-fit: cover;
+  position: absolute;
+  top: 709px;
+  width: 151px;
+}
+
+.in-game-select .Angel-cpu-on-aframe-cJhv78 {
+  background-color: transparent;
+  height: 405px;
+  left: 604px;
+  object-fit: cover;
+  position: absolute;
+  top: 282px;
+  width: 712px;
+}
+
+.in-game-select .Angel-cube-render-cJhv78 {
+  background-color: transparent;
+  height: 168px;
+  left: 644px;
+  object-fit: cover;
+  position: absolute;
+  top: 183px;
+  width: 121px;
+}

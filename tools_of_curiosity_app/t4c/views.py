@@ -16,11 +16,11 @@ def aframedemo(request):
     context = {}
     return render(request, "t4c/aframedemo.html", context)
 
-def minigame1(request):
-    print("t4c/views.py @ minigame1()")
+def Angel(request):
+    print("t4c/views.py @ Angel()")
     pprint(request)
     context = {}
-    return render(request, "t4c/minigame1.html", context)
+    return render(request, "t4c/Angel.html", context)
 
 def minigame2(request):
     print("t4c/views.py @ minigame2()")
@@ -65,11 +65,11 @@ def Egypt(request):
     pprint(request)
     context = {}
     return render(request, "t4c/Egypt.html", context)    
-def scrappy(request):
-     print("t4c/views.py @ scrappy()")
+def cricket(request):
+     print("t4c/views.py @ cricket()")
      pprint(request)
      context = {}
-     return render(request, "t4c/scrappy.html", context)
+     return render(request, "t4c/cricket.html", context)
 def level1(request):
      print("t4c/views.py @ level1()")
      pprint(request)

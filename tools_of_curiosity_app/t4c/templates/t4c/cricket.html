@@ -3,16 +3,36 @@
   <head>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-extras.animation-mixer@3.4.0/dist/aframe-extras.animation-mixer.js"></script>
+    <script src="https://unpkg.com/aframe-extras.animation-mixer@6.1.1/dist/aframe-extras.animation-mixer.js"></script>
+    
     <script>
       function Die (){
         let entity = document.getElementById("Malwareee")
         console.log(entity.getAttribute('animation-mixer'));
-        entity.setAttribute('animation-mixer', { clip: "Death"});
-
+        entity.setAttribute('animation-mixer', { clip: "Death", loop: "once", clampWhenFinished: "true"});
+        this.addEventListener('animation-finished', hideElement);
       }
 
+      // function remove () {
+        // console.log('remove');
+      //  }
+      
+      // function DisplayMenu(Malwareee) {
+    // var Malwareee = document.getElementById(Malwareee);
+            // if (Malwareee.style.visibility == 'visible') {
+              // Malwareee.style.visibility = 'hidden';
+            // }
+            // else {
+              // Malwareee.style.visibility = 'visible';
+            // }
+        // }
+ 
+        // function hideElement() {
+          // element = document.getElementById('Malwareee');
+          // element.style.visibility = 'hidden';
+        // }
     </script>
+
   </head>
   <body>
     <a-scene>
@@ -62,7 +82,9 @@
         </a-cursor>
       </a-camera>
     </a-scene>
+   
     <button style="position: absolute; top: 0; left: 0"  onclick="Die()">Death</button>
-    </div>
+    <button style="position: absolute; top: 0; right: 0" onclick="hideElement()">Hide Element</button>
+  </div>
   </body>
 </html>
