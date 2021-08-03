@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="/static/admin/assets/javascriptfiles/aframe-super-shooter-kit.js"></script>
+  <script src="/static/admin/assets/javascriptfiles/aframe-look-at-component.js"></script>
+  <script src="/static/admin/assets/javascriptfiles/basic-enemy-behavior.js"></script>
+  <script src="/static/admin/assets/javascriptfiles/health-handler.js"></script>
+  <script src="/static/admin/assets/javascriptfiles/score-handler.js"></script>
+  <script src="/static/admin/assets/javascriptfiles/health-pack.js"></script>
+  <script src="/static/admin/assets/javascriptfiles/power-up-ability.js"></script>
+  <script src="/static/admin/assets/javascriptfiles/level-1-spawning.js"></script>
+</head>
+
+<body>
+  <a-scene cursor="rayOrigin: mouse" score-handler level-1-spawning>
+    <a-assets>
+      <a-mixin id="malware" geometry="primitive: sphere" material="color: purple" position="-4 4 -5"
+        basic-enemy-behavior shooter look-at="#playerBody"></a-mixin>
+    </a-assets>
+    <a-box health-pack position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+    <a-sphere health-pack position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+    <a-cylinder health-pack position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+    <a-sky color="#ECECEC"></a-sky>
+    <a-entity id="player" wasd-controls position="0 1.5 0" camera look-controls>
+      <a-entity power-up-ability material="color: grey" scale="2 .5 .1" geometry="primitive: box" position="0 -1 -1.5">
+      </a-entity>
+    </a-entity>
+    <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" id="playerBody" health-handler
+      position="0 1 1" radius="0.5" height="2">
+      <!-- The box gets in the way of the click raycast! That's why it is behind the player.
+        Still looks like enemies are shooting player but hitbox doesn't interfere with raycast -->
+    </a-entity>
+    <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: .1" material="color: orange"></a-entity>
+    <a-entity id="scoreBoard" geometry="primitive: plane" scale="3 1.5 1" position="5 3 -5" material="color: black">
+      <a-entity id="playerHealth" text="value: 10; color: white" scale="5 5 1" position="2 0 0"></a-entity>
+      <a-entity id="playerScore" text="value: 0; color: white" scale="5 5 1" position="2.5 0 0"></a-entity>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
