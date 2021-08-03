@@ -7,6 +7,6 @@ AFRAME.registerComponent("pop-up", {
         el.removeChild(exitButton);
         el.parentNode.removeChild(el);
       };
-     exitButton.addEventListener("click", this.deletePopUp);
+     exitButton.addEventListener("click", this.deletePopUp); // Only when the exit button is clicked will the pop up be deleted
     }
   });

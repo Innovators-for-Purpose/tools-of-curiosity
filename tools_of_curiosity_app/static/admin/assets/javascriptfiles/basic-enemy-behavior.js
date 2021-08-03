@@ -9,7 +9,7 @@ AFRAME.registerComponent("basic-enemy-behavior", {
       // Called when an entity with this component is created
       let el = this.el;
       let sceneEl = document.querySelector("a-scene");
-      var health = this.data.maxHealth;
+      var health = this.data.maxHealth; // This will either be the custom amount you put when creating the enemy or the default value
       var points = this.data.pointValue;
       this.shoot = function() {
         this.el.emit("shoot");
@@ -27,7 +27,7 @@ AFRAME.registerComponent("basic-enemy-behavior", {
       };
       this.el.addEventListener("click", this.clickAndDie); // When clicked, will call the clickAndDie function
       this.powerUpDamage = function(event) {
-        health -= event.detail.damage;
+        health -= event.detail.damage; // If hit by special ability, will take the damage that the special ability does
         if (health <= 0) {
           el.emit("enemy-died", { points: points }, true);
           el.parentNode.removeChild(el);
@@ -36,7 +36,7 @@ AFRAME.registerComponent("basic-enemy-behavior", {
       sceneEl.addEventListener("superAbility", this.powerUpDamage);
     },
     remove: function() {
-      clearInterval(this.myInterval);
+      clearInterval(this.myInterval); // You have to clear any intervals or event listeners when you delete objects or they'll be there forever
       this.el.removeEventListener("click", this.clickAndDie);
     }
   });
