@@ -11,7 +11,12 @@ AFRAME.registerComponent("health-handler", {
         healthCounter.setAttribute("text", { value: el.components.target.healthPoints }); // Update the health on the info board
       }); 
       el.addEventListener("die", () => { // Called when the player's health reaches 0 or lower
-        console.log("You died... game over!"); // Replace this with proper death screen
+        var loseScreen = document.createElement("a-entity");
+        loseScreen.setAttribute("geometry", "primitive: plane"); // These are all the attributes we want the exit button to have
+        loseScreen.setAttribute("material", "color: blue");
+        loseScreen.setAttribute("text", "value: You Lose!");
+        loseScreen.setAttribute("position", "0 1 -1")
+        sceneEl.appendChild(loseScreen);
         el.parentNode.removeChild(el); // Delete player body so health can no longer be depleted
       });
     }
