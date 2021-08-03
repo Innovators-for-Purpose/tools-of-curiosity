@@ -5,7 +5,7 @@ AFRAME.registerComponent("health-handler", {
       var healthCounter = sceneEl.querySelector("#playerHealth");
       sceneEl.addEventListener("health-pack", function(event){
         console.log("healing");
-        el.components.target.healthPoints += 5 // Update the health in the player body
+        el.components.target.healthPoints += event.detail.healthPoints // Update the health in the player body
         healthCounter.setAttribute("text", { value: el.components.target.healthPoints}); // Update the info board to reflect health change
       }); // When "health-pack" is emitted, call health-pack
       el.addEventListener("hit", () => {
