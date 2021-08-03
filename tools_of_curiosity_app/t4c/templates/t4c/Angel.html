@@ -28,9 +28,7 @@
           var cords = document.querySelector("#movement");
           var el = this.el; // <a-box>
           el.addEventListener("mousedown", function() {
-            document
-              .querySelector("a-scene")
-              .systems["movelist"].addQueue(data.direction);
+            document.querySelector("a-scene").systems["movelist"].addQueue(data.direction);
    
           });
         }
@@ -48,7 +46,7 @@
           var el = this.el;
           el.addEventListener("mousedown", function() {
             document.querySelector("a-scene").systems["movelist"].run();
-           
+           console.log("hi whas good?")
         });
         }
       });
@@ -151,10 +149,13 @@
     
     <script>
       
+         
       
-        function movementForward() {
-           
-            
+        function monkeymovement() {  
+         
+
+          var data = this.data;
+          document.querySelector("a-scene").systems["movelist"].addQueue(data.direction);
             console.log("move forward!")
         }
     </script>
@@ -202,7 +203,7 @@
               </div>
             </div>
           </div>
-          <div onclick="movementForward()" class="group-191-cJhv78">
+          <div onclick="monkeymovement()" class="group-191-cJhv78">
             <div class="rectangle-58-ey0hSj"></div>
             <div class="rectangle-59-ey0hSj border-1px-niagara"></div>
             <div class="group-184-ey0hSj">
