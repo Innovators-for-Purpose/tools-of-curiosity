@@ -2,9 +2,9 @@ AFRAME.registerComponent("health-handler", {
     init: function() {
       var el = this.el;
       var sceneEl = document.querySelector("a-scene");
-      var healthCounter = sceneEl.querySelector("#playerHealth"); // Object you want to display player health needs the playerHealth id
+      var healthCounter = sceneEl.querySelector("#scoreBoard").querySelector("#playerHealth"); // Object you want to display player health needs the playerHealth id
       sceneEl.addEventListener("health-pack", function(event){
-        el.components.target.healthPoints += event.detail.healthPoints // Update the health in the player body
+        el.components.target.healthPoints = el.components.target.healthPoints + event.detail.points // Update the health in the player body
         healthCounter.setAttribute("text", { value: el.components.target.healthPoints}); // Update the info board to reflect health change
       }); // When "health-pack" is emitted, call health-pack
       el.addEventListener("hit", () => { // Called when the player's hit box is hit by a bullet
