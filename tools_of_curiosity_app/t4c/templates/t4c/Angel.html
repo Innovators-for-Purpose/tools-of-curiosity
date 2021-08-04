@@ -15,13 +15,13 @@
       type="text/css"
     />
     <style>
-     .container-center-horizontal { 
-           position: absolute; 
-        height: 9px; 
-         top: 0; 
-         left: 0; 
-         right: 0; 
-       } 
+      .container-center-horizontal {  
+            position: absolute;  
+         height: 9px;  
+          top: 0;  
+          left: 0;  
+          right: 0;  
+        }  
     </style>
   </head>
   <body>
@@ -76,7 +76,8 @@
       });
     </script>
    <!-- background for forest enviorment and monkey entity -->
-    <a-scene background="color: #FAFAFA" environment="preset: forest" movelist>
+    <a-scene background="color: #FAFAFA" environment="preset: forest" movelist keyboard-shortcuts="enterVR: false;" 
+    vr-mode-ui="enabled: false;">
       <a-asset-item
         id="monkey-asset"
         src="/static/admin/assets/MonkeyTotem.glb"
@@ -164,7 +165,7 @@
 
       <!-- reset> -->
       <!-- </a-plane> -->
-      <a-camera position="0 5 10" rotation="  0 10 0" >
+      <a-camera position="0 5 10" rotation="  0 10 0" wasd-controls-enabled="false" >
         
         <a-cursor></a-cursor>
       </a-camera>
