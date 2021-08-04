@@ -13,6 +13,8 @@ This repository hold everything for the Tools Of Curiosity game.
 From the tools-of-curiosity directory:
 * Create a python virtualenv
     * `python3 -m venv venv`
+* Activate the virtual environment
+    * `source ./venv/bin/activate`
 * Install python requirements
     * `./venv/bin/pip install -r requirements.txt`
 
