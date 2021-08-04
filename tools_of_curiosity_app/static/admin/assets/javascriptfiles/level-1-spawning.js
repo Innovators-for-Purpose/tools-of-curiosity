@@ -5,11 +5,9 @@ AFRAME.registerSystem("level-1-spawning", {
         this.spawnNext = function () {
             var baby = document.createElement("a-entity"); // Create the base object you want to add to the scene
             baby.setAttribute("mixin", "malware"); // Add the preset of attributes you want that object to have
-            baby.setAttribute("position", { x: -6 + (counter * 2.5), y: 2, z: -5 }); // This sets where the enemy will be created, you can change where you want them to spawn
+            baby.setAttribute("position", { x: -6 + (counter * 2.5), y: 4, z: -5 }); // This sets where the enemy will be created, you can change where you want them to spawn
             var modelPart = document.createElement("a-entity");
-            modelPart.setAttribute("gltf-model", "#Malware");
-            modelPart.setAttribute("animation-mixer", "clip: Attack; loop: once");
-            modelPart.setAttribute("rotation", "0 180 0"); // I do this because the look at component has the objects look 180 degrees AWAY for some reason
+            modelPart.setAttribute("mixin", "malwareModel");
             sceneEl.appendChild(baby); // To add the enemy to the scene you must append the object to it
             baby.appendChild(modelPart);
             counter++; // Add to counter to keep track of where to put enemy and to know if we should stop making them
