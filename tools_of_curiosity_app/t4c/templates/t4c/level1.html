@@ -11,13 +11,20 @@
   <script src="/static/admin/assets/javascriptfiles/health-pack.js"></script>
   <script src="/static/admin/assets/javascriptfiles/power-up-ability.js"></script>
   <script src="/static/admin/assets/javascriptfiles/level-1-spawning.js"></script>
+  <script src="https://unpkg.com/aframe-extras.animation-mixer@6.1.1/dist/aframe-extras.animation-mixer.js"></script>
 </head>
 
 <body>
   <a-scene cursor="rayOrigin: mouse" score-handler level-1-spawning>
     <a-assets>
-      <a-mixin id="malware" geometry="primitive: sphere" material="color: purple" position="-4 4 -5"
-        basic-enemy-behavior shooter look-at="#playerBody"></a-mixin>
+      <a-mixin id="malware" position="-4 4 -5" geometry="primitive: box" material="visible: false"
+        basic-enemy-behavior="coolDown: 3000" look-at="#playerBody" shooter>
+      </a-mixin>
+      <a-asset-item
+        id="Malware"
+        src="/static/admin/assets/Malware All Together.glb"
+        position="-10 0 -3"
+      ></a-asset-item>
     </a-assets>
     <a-box health-pack position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
     <a-sphere health-pack position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
