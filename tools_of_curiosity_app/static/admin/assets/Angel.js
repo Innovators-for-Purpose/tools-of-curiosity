@@ -108,6 +108,7 @@ AFRAME.registerComponent("tile", {
 function isSafe(monkeyX, monkeyZ) {
   var tileCords = [];
   var allTiles = document.querySelectorAll("[tile]");
+  console.log(allTiles[i].getAttribute("position").x +", "+ allTiles[i].getAttribute("position").z);
   for (var i = 0; i <= allTiles.length - 1; i++) {
     tileCords.push(allTiles[i].getAttribute("position"));
     console.log(allTiles[i].getAttribute("position").x +", "+ allTiles[i].getAttribute("position").z);
