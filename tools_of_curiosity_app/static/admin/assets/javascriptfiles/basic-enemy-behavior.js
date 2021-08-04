@@ -12,7 +12,6 @@ AFRAME.registerComponent("basic-enemy-behavior", {
       var health = this.data.maxHealth; // This will either be the custom amount you put when creating the enemy or the default value
       var points = this.data.pointValue;
       this.shoot = function() {
-        // el.setAttribute("animation-mixer", "clip: Attack; loop: once");
         this.el.emit("shoot");
       };
       this.myInterval = setInterval(() => {
