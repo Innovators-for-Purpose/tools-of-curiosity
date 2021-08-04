@@ -13,8 +13,9 @@ AFRAME.registerComponent("enemy-model", {
         el.addEventListener("animation-finished", this.idle);
     },
     remove: function () {
-        el.removeComponent("animation-mixer");
-        parent.removeEventListener("shoot", this.attack);
-        el.removeEventListener("animation-finished", this.idle);
+        this.el.removeComponent("animation-mixer");
+        this.el.setAttribute("material", "visible: false");
+        this.el.parentNode.removeEventListener("shoot", this.attack);
+        this.el.removeEventListener("animation-finished", this.idle);
     }
 });
