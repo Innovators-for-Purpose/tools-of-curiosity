@@ -263,8 +263,20 @@
           document.querySelector("#Angel").object3D.position.z += 1;
         }
         console.log("move back!");
-        gameNotEnd = isSafe(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z) || win(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z);
-
+        if (isSafe(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z) == 'false'){
+          showLoseScreen = 'false';
+          document.addEventListener('keydown', (event) => {
+            location.reload();
+            });
+        
+        } 
+        if (win(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z) == 'true'){
+          showWinScreen = 'true';
+          document.addEventListener('keydown', (event) => {
+            location.reload();
+            });
+          
+        }
 
       }
       function monkeyright() {
