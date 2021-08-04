@@ -198,6 +198,8 @@
       function gameStart(){
       var gameNotEnd = 'true';
       var turntally = 0;
+      var showWinScreen = 'false';
+      var showLoseScreen = 'true';
       }
       
 
@@ -218,9 +220,22 @@
           document.querySelector("#monkey").object3D.position.z -= 1;
         }
         console.log("move forward!");
-        gameNotEnd = isSafe(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z || win(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z));
+        if (isSafe(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z) == 'false'){
+          showLoseScreen = 'false';
+          document.addEventListener('keydown', (event) => {
+            location.reload();
+            });
+        
+        } 
+        if (win(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z) == 'true'){
+          showWinScreen = 'true';
+          document.addEventListener('keydown', (event) => {
+            location.reload();
+            });
 
 
+          
+        }
  
       }
       
@@ -295,6 +310,7 @@
         var monkeyCurrentPos = monkey.getAttribute("position");
         return {x:monkeyCurrentPos.x , z:monkeyCurrentPos.z};
       }
+      
       
       
 
