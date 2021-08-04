@@ -196,14 +196,28 @@
     timestamp = now;
   }
 }       
+
   //  functions for buttons, call using function name 
       function monkeymovement() {
+
+ 
+      var turntally = 0
+   
+
         var forward = 0;
         var el = this.el;
         var cords = document.querySelector("#monkey");
         var data = this.data;
-        document.querySelector("#monkey").object3D.position.x += 1;
-        
+        if (turnTally == 0) {
+          document.querySelector("#monkey").object3D.position.x += 1;
+        console.log(turnTally)
+        } else if (turnTally == 90) {
+          document.querySelector("#monkey").object3D.position.z += 1;
+        } else if (turnTally == 180) {
+          document.querySelector("#monkey").object3D.position.x -= 1;
+        } else {
+          document.querySelector("#monkey").object3D.position.z -= 1;
+        }
         console.log("move forward!");
       }
       
@@ -211,11 +225,19 @@
         var el = this.el;
         var cords = document.querySelector("#monkey");
         var data = this.data;
-        document.querySelector("#monkey").object3D.position.x -= 1;
+        if (turnTally == 0) {
+          document.querySelector("#Angel").object3D.position.x -= 1;
+        } else if (turnTally == 90) {
+          document.querySelector("#Angel").object3D.position.z -= 1;
+        } else if (turnTally == 180) {
+          document.querySelector("#Angel").object3D.position.x += 1;
+        } else {
+          document.querySelector("#Angel").object3D.position.z += 1;
+        }
         console.log("move back!");
       }
       function monkeyright() {
-        var turntally = 0
+        
         turntally = turntally + 90
         console.log(turntally)
         var el = this.el;
@@ -223,7 +245,17 @@
         var data = this.data;
         cords.setAttribute("rotation", { x: 0, y: turntally, z: 0 });
         
-        console.log("move back!");
+        console.log("move right!");
+      }
+      function monkeyleft() {
+        turntally = turntally - 90
+        console.log(turntally)
+        var el = this.el;
+        var cords = document.querySelector("#monkey");
+        var data = this.data;
+        cords.setAttribute("rotation", { x: 0, y: turntally, z: 0 });
+        
+        console.log("move left!");
       }
     </script>
         <!-- ui elements -->
