@@ -2,6 +2,7 @@ AFRAME.registerComponent("health-handler", {
     init: function() {
       var el = this.el;
       var sceneEl = document.querySelector("a-scene");
+      var cameraEl = sceneEl.querySelector("#player");
       var healthCounter = sceneEl.querySelector("#scoreBoard").querySelector("#playerHealth"); // Object you want to display player health needs the playerHealth id
       sceneEl.addEventListener("health-pack", function(event){
         el.components.target.healthPoints = el.components.target.healthPoints + event.detail.points // Update the health in the player body
@@ -15,8 +16,8 @@ AFRAME.registerComponent("health-handler", {
         loseScreen.setAttribute("geometry", "primitive: plane"); // These are all the attributes we want the exit button to have
         loseScreen.setAttribute("material", "color: blue");
         loseScreen.setAttribute("text", "value: You Lose!");
-        loseScreen.setAttribute("position", "0 1 -1")
-        sceneEl.appendChild(loseScreen);
+        loseScreen.setAttribute("position", "0 0 -1")
+        cameraEl.appendChild(loseScreen);
         el.parentNode.removeChild(el); // Delete player body so health can no longer be depleted
       });
     }

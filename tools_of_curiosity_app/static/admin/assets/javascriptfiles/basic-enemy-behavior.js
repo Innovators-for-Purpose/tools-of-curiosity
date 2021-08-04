@@ -38,6 +38,7 @@ AFRAME.registerComponent("basic-enemy-behavior", {
     remove: function() {
       clearInterval(this.myInterval); // You have to clear any intervals or event listeners when you delete objects or they'll be there forever
       this.el.removeEventListener("click", this.clickAndDie);
+      sceneEl.removeEventListener("superAbility", this.powerUpDamage);
     }
   });
   
