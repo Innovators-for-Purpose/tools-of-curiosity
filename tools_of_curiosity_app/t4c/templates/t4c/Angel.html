@@ -3,7 +3,7 @@
     <title>A-Frame Monkey_Mingame</title>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="/static/admin/assets/Angel.js"></script>
-  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <!-- <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> -->
     <link
       rel="stylesheet"
       href="/static/admin/assets/monkeyui/in-game-select.css"
@@ -25,9 +25,10 @@
     </style>
   </head>
   <body>
+    <!-- Old code use without ui  different components to move monkey call using name in register component -->
     <script>
       AFRAME.registerComponent("monkeymovement", {
-        schema: {
+        schema: {              
           direction: { type: "string" }
         },
 
@@ -74,7 +75,7 @@
         }
       });
     </script>
-
+   <!-- background for forest enviorment and monkey entity -->
     <a-scene background="color: #FAFAFA" environment="preset: forest" movelist>
       <a-asset-item
         id="monkey-asset"
@@ -86,16 +87,27 @@
         ></a-asset-item>
         <a-asset-item id="left" src=""></a-asset-item>
       </a-asset-item>
-
+       <!-- box platform -->
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" tile="x:1;y:1"id="box_a"></a-box>
+        <a-box position="-2 0.5 -4" rotation="0 45 0" color="#4CC3D9" tile="x:2;y:2"id="box_a"></a-box>
+        <a-box position="-2 0.5 -3" rotation="0 45 0" color="#4CC3D9" tile="x:1;y:2"id="box_b"></a-box>      
+        <a-box position="-1 2 -3" rotation="0 45 0" color="#00000" id=""></a-box>
+        
+        <a-assets>
+          <img id="my-image" src="/static/admin/assets/monkeyui/toc-ui-shape-display-01@1x.png">
+        </a-assets>
+      
+        
+        <a-image src="#my-image" scale="100 50 100" position="0 1 0 "></a-image>
       <a-entity
         id="monkey"
         gltf-model="#monkey-asset"
-        position="0.00 0.00 0.000"
+        position="0.00 3 8"
         rotation="0.000 0.00 0.000"
         scale="1 1 1"
       >
       </a-entity>
-
+<!-- plane to control mkonkey without ui  -->
       <!-- <a-plane -->
       <!-- position="-3.071 1.273 1.446" -->
       <!-- height="2" -->
@@ -153,7 +165,7 @@
 
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
-
+    <!-- ui button code  -->
     <script>
       var gameRunning = "true";
       function gameStart() {
@@ -181,7 +193,8 @@
     // Update last accepted click occurrence
     timestamp = now;
   }
-}
+}       
+  //  functions for buttons call using function name 
       function monkeymovement() {
         var forward = 0;
         var el = this.el;
@@ -211,7 +224,7 @@
         console.log("move back!");
       }
     </script>
-
+        <!--  -->
     <div class="container-center-horizontal">
       <div class="in-game-select screen">
         <!-- <img -->
@@ -400,14 +413,15 @@
         <img
           class="game-button-user-input-02-iRXH7W"
           src="/static/admin/assets/monkeyui/game-button-user-input-02-1@1x.png"
-        /><img
-          class="monkey-cpu-on-aframe-cJhv78"
-          src="/static/admin/assets/monkeyui/monkey---cpu-on-aframe@1x.png"
         />
-        <img
-          class="monkey-cube-render-cJhv78"
-          src="/static/admin/assets/monkeyui/monkey-cube-render@1x.png"
-        />
+          <!-- <img  -->
+          <!-- class="monkey-cpu-on-aframe-cJhv78" -->
+          <!-- src="/static/admin/assets/monkeyui/monkey---cpu-on-aframe@1x.png" -->
+        <!-- /> -->
+        <!-- <img -->
+          <!-- class="monkey-cube-render-cJhv78" -->
+          <!-- src="/static/admin/assets/monkeyui/monkey-cube-render@1x.png" -->
+        <!-- /> -->
       </div>
     </div>
   </body>
