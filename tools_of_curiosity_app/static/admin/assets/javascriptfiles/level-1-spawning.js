@@ -5,7 +5,7 @@ AFRAME.registerSystem("level-1-spawning", {
         this.spawnNext = function () {
             var baby = document.createElement("a-entity"); // Create the base object you want to add to the scene
             baby.setAttribute("mixin", "malware"); // Add the preset of attributes you want that object to have
-            baby.setAttribute("position", { x: -6 + (counter * 2.5), y: 2, z: -5 }); // This sets where the enemy will be created, you can change where you want them to spawn
+            baby.setAttribute("position", { x: -6 + (counter * 2.5), y: 4, z: -5 }); // This sets where the enemy will be created, you can change where you want them to spawn
             var modelPart = document.createElement("a-entity");
             modelPart.setAttribute("mixin", "malwareModel");
             sceneEl.appendChild(baby); // To add the enemy to the scene you must append the object to it

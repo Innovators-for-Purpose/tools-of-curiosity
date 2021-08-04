@@ -10,8 +10,9 @@ AFRAME.registerSystem("score-handler", {
         if(points === 6){
           var winScreen = document.createElement("a-entity");
           winScreen.setAttribute("geometry", "primitive: plane"); // These are all the attributes we want the exit button to have
-          winScreen.setAttribute("material", "color: blue");
-          winScreen.setAttribute("text", "value: You Win!");
+          winScreen.setAttribute("material", "color: coral");
+          winScreen.setAttribute("scale", "10 10 1");
+          winScreen.setAttribute("text", "value: You Win!; align: center");
           winScreen.setAttribute("position", "0 0 -1")
           cameraEl.appendChild(winScreen);
         }

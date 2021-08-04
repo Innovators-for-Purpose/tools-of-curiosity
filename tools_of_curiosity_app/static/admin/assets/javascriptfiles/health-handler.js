@@ -14,8 +14,9 @@ AFRAME.registerComponent("health-handler", {
       el.addEventListener("die", () => { // Called when the player's health reaches 0 or lower
         var loseScreen = document.createElement("a-entity");
         loseScreen.setAttribute("geometry", "primitive: plane"); // These are all the attributes we want the exit button to have
-        loseScreen.setAttribute("material", "color: blue");
-        loseScreen.setAttribute("text", "value: You Lose!");
+        loseScreen.setAttribute("material", "color: coral");
+        loseScreen.setAttribute("scale", "10 10 1")
+        loseScreen.setAttribute("text", "value: You Lose!; align: center");
         loseScreen.setAttribute("position", "0 0 -1")
         cameraEl.appendChild(loseScreen);
         el.parentNode.removeChild(el); // Delete player body so health can no longer be depleted
