@@ -98,3 +98,46 @@ AFRAME.registerSystem("movelist", {
     }
   }
 });
+AFRAME.registerComponent("tile", {
+  schema: {
+    x: { type: "int", default: 1 },
+    y: { type: "int", default: 1 }
+  }
+});
+
+function isSafe(monkeyX, monkeyZ) {
+  var tileCords = [];
+  var allTiles = document.querySelectorAll("[tile]");
+  for (var i = 0; i <= allTiles.length - 1; i++) {
+    tileCords.push(allTiles[i].getAttribute("position"));
+    console.log(allTiles[i].getAttribute("position").x +", "+ allTiles[i].getAttribute("position").z);
+  }
+  for (var i = 0; i <= tileCords.length - 1; i++) {
+    if (tileCords[i].x == monkeyX && tileCords[i].z == monkeyZ) {
+      return true;
+    }
+  }
+  return false;
+}
+function currentLocation(monkey) {
+  var monkeyCurrentPos = monkey.getAttribute("position");
+  return {x:monkeyCurrentPos.x , z:monkeyCurrentPos.z};
+
+  
+}
+function restart(monkey){
+monkey.setAttribute('position', {x: 0, y: 1, z: 0});  
+  
+}
+  
+  
+  
+
+setTimeout(function() {
+  console.log(isSafe(-1, -3));
+  console.log(isSafe(1, 1));
+  console.log(isSafe(1, 3));
+  console.log(isSafe(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z))
+  
+  console.log(currentLocation(document.getElementById("box_a")));
+}, 1000);
