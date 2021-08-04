@@ -204,6 +204,15 @@
       var turntally = 0
    
 
+  //  functions for buttons call using function name 
+      function gameStart(){
+      var gameNotEnd = 'true';
+      var turntally = 0;
+      }
+      
+
+      while (gameNotEnd == 'true'){
+      function monkeyforward() {
         var forward = 0;
         var el = this.el;
         var cords = document.querySelector("#monkey");
@@ -219,6 +228,10 @@
           document.querySelector("#monkey").object3D.position.z -= 1;
         }
         console.log("move forward!");
+        gameNotEnd = isSafe(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z);
+
+
+ 
       }
       
       function monkeyback() {
@@ -235,6 +248,8 @@
           document.querySelector("#Angel").object3D.position.z += 1;
         }
         console.log("move back!");
+        gameNotEnd = isSafe(document.querySelector('#monkey').getAttribute("position").x, document.querySelector('#monkey').getAttribute("position").z);
+
       }
       function monkeyright() {
         
@@ -257,15 +272,38 @@
         
         console.log("move left!");
       }
+      function isSafe(monkeyX, monkeyZ) {
+        var tileCords = [];
+        var allTiles = document.querySelectorAll("[tile]");
+        for (var i = 0; i <= allTiles.length - 1; i++) {
+          tileCords.push(allTiles[i].getAttribute("position"));
+          console.log(allTiles[i].getAttribute("position").x +", "+ allTiles[i].getAttribute("position").z);
+        }
+        for (var i = 0; i <= tileCords.length - 1; i++) {
+          if (tileCords[i].x == monkeyX && tileCords[i].z == monkeyZ) {
+            return true;
+          }
+        }
+        return false;
+      }
+      function currentLocation(monkey) {
+        var monkeyCurrentPos = monkey.getAttribute("position");
+        return {x:monkeyCurrentPos.x , z:monkeyCurrentPos.z};
+      }
+      
+      
+      }
+      }  
+
     </script>
-        <!-- ui elements -->
+       
     <div class="container-center-horizontal">
       <div class="in-game-select screen">
          
-        <!-- <img -->
-          <!-- class="toc-ui-shape-display-01-cJhv78" -->
-          <!-- src="/static/admin/assets/monkeyui/toc-ui-shape-display-01@1x.png" -->
-        <!-- /> -->
+        <img 
+           class="toc-ui-shape-display-01-cJhv78" 
+           src="/static/admin/assets/monkeyui/toc-ui-shape-display-01@1x.png" 
+        /> 
         <img
           class="level-1-title-01-cJhv78"
           src="/static/admin/assets/monkeyui/level-1-title-01@1x.png"
@@ -449,15 +487,10 @@
           class="game-button-user-input-02-iRXH7W"
           src="/static/admin/assets/monkeyui/game-button-user-input-02-1@1x.png"
         />
-          <!-- <img  -->
-          <!-- class="monkey-cpu-on-aframe-cJhv78" -->
-          <!-- src="/static/admin/assets/monkeyui/monkey---cpu-on-aframe@1x.png" -->
-        <!-- /> -->
-        <!-- <img -->
-          <!-- class="monkey-cube-render-cJhv78" -->
-          <!-- src="/static/admin/assets/monkeyui/monkey-cube-render@1x.png" -->
-        <!-- /> -->
+           <img  class="monkey-cpu-on-aframe-cJhv78" src="/static/admin/assets/monkeyui/monkey---cpu-on-aframe@1x.png"  /> 
+       <img  class="monkey-cube-render-cJhv78"  src="/static/admin/assets/monkeyui/monkey-cube-render@1x.png" /> 
       </div>
     </div>
-  </body>
+
+    </body>
 </html>
